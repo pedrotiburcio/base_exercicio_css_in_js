@@ -1,18 +1,20 @@
-import Header from './components/Cabecalho'
+import { ThemeProvider } from 'styled-components'
+import Titulo from './components/Cabecalho'
+import EstiloGlobal, { Container } from './styled'
 import Hero from './components/Hero'
 import ListaVagas from './containers/ListaVagas'
-
-import './global.css'
+import temaLight from './themes/light'
 
 function App() {
   return (
-    <>
-      <Header />
+    <ThemeProvider theme={temaLight}>
+      <EstiloGlobal />
+      <Titulo>EBAC Jobs</Titulo>
       <Hero />
-      <div className="container">
+      <Container>
         <ListaVagas />
-      </div>
-    </>
+      </Container>
+    </ThemeProvider>
   )
 }
 
